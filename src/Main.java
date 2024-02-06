@@ -19,33 +19,12 @@ public class Main {
        thread2.setName("Поток Т2");
        thread2.start();
 
-        try {
-            try {
-                t2.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
-        }
-
 
         T1 t1 = new T1();
         Thread thread1 = new Thread(t1);
         thread1.setName("Поток Т1");
         thread1.start();
 
-
-
-        try {
-            try {
-                t1.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
-        }
     }
     static void calculator() {
         int i;
